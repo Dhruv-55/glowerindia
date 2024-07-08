@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class,'home'])->name('website-home');
+
+
+Route::prefix('product')->group(function () {
+    Route::get('/',[ProductController::class,'index'])->name('website-product-view');
 });

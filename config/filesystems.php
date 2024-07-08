@@ -42,6 +42,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'spaces'=> [
+            'driver' => 'local',
+            'root' => public_path('spaces'),
+            'url' => env('APP_URL').'/spaces',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
