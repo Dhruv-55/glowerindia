@@ -18,4 +18,8 @@ class Category extends Model
     public function scopeActive($q){
         return $q->where('status',self::ACTIVE);
     }
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }

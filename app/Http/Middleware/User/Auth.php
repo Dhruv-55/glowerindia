@@ -18,7 +18,7 @@ class Auth
     public function handle(Request $request, Closure $next)
     {
         if(!Session::has('user'))
-            return redirect()->back()->with(['error' => 'Session has been expired']);
+            return redirect()->route('user-login')->with(['error' => 'Session has been expired']);
 
         return $next($request);
     }

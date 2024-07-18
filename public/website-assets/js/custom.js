@@ -1076,7 +1076,7 @@ var Glower = function () {
 			priceslider();
 			handleCurrentActive();
 			handleShopCart();
-			handleBootstrapTouchSpin();
+			// handleBootstrapTouchSpin();
 			handleSelectpicker();
 			//handleSmartWizard();
 			dzCategoryToggle();
@@ -1086,7 +1086,7 @@ var Glower = function () {
 			handleHeaderMenuItem();
 			cartButton();
 			//handleColorFilter();
-			handleLightgallery();
+			// handleLightgallery();
 			//handleSupport();
 			menuHover();
 			wishlistBtn();

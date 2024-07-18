@@ -35,6 +35,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+   
+	@livewireStyles
 
 </head>
 <body>
@@ -68,6 +71,39 @@
 <script src="/website-assets/js/dz.carousel.js"></script><!-- DZ CAROUSEL JS -->
 <script src="/website-assets/js/dz.ajax.js"></script><!-- AJAX -->
 <script src="/website-assets/js/custom.js"></script><!-- CUSTOM JS -->
+@livewireScripts
+@yield('page-js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+	toastr.options = {
+		"closeButton": true,
+		"debug": false,
+		"newestOnTop": false,
+		"progressBar": true,
+		"positionClass": "toast-top-right",
+		"preventDuplicates": false,
+		"onclick": null,
+		"showDuration": "300",
+		"hideDuration": "1000",
+		"timeOut": "5000",
+		"extendedTimeOut": "1000",
+		"showEasing": "swing",
+		"hideEasing": "linear",
+		"showMethod": "fadeIn",
+		"hideMethod": "fadeOut"
+	};
+
+	window.addEventListener('message', event => {
+            if(event.detail.type === 'success') {
+                toastr.success(event.detail.text);
+            } else if(event.detail.type === 'error') {
+                toastr.error(event.detail.text);
+            }
+        });
+
+</script>   
 </body>
 </html>

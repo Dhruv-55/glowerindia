@@ -381,7 +381,7 @@
                     </div>
                   </div>
                   <a href="shop-checkout.html" class="btn btn-outline-secondary btn-block m-b20">Checkout</a>	
-                  <a href="shop-cart.html" class="btn btn-secondary btn-block">View Cart</a>	
+                  <a href="{{ route('website-product-cart') }}" class="btn btn-secondary btn-block">View Cart</a>	
                 </div>	
               </div>	
             </div>
@@ -438,7 +438,7 @@
                   </li>	
                 </ul>
                 <div class="mt-auto">
-                  <a href="shop-wishlist.html" class="btn btn-secondary btn-block">Check Your Favourite</a>
+                  <a href="{{ route('website-product-wishlist') }}" class="btn btn-secondary btn-block">Check Your Favourite</a>
                 </div>	
               </div>
             </div>

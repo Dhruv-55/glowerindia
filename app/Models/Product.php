@@ -26,4 +26,14 @@ class Product extends Model
     public function images(){
       return $this->hasMany(ProductImage::class);
     }
+
+
+    public function getPrimaryImageAttribute(){
+      return ProductImage::where('product_id',$this->id)->oldest()->first()->image;
+    }
+
+    public function getDiscountAttribute(){
+      
+      return number_format(($this->original_price -$this->selling_price)*0.1);
+    }
 }

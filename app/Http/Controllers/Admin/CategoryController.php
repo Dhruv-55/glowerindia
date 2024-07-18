@@ -25,9 +25,11 @@ class CategoryController extends Controller
                 'slug' => 'required'
             ]);           
 
-            $category_image = null;
             
           DB::transaction(function() use($request) {
+
+            $category_image = null;
+
             if ($request->image) {
                 if ($request->hasFile('image') && $request->file('image')->isValid()){
                     $disk = Storage::disk('spaces');
